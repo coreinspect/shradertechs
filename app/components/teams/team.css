@@ -1,0 +1,383 @@
+/* *** TEAM *** */
+
+.vertical-text {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  margin-right: 20px; /* Center the rotated letters */
+}
+
+.vertical-text span {
+  font-family: var(--font-raleway);
+  display: block;
+  transform: rotate(270deg);
+  font-size: 6rem;
+  font-weight: 900;
+  line-height: 1;
+  margin: 1px 0;
+  color: var(--white);
+}
+
+.body-wrapper-slider {
+  position: relative;
+  box-sizing: border-box !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 0 35px;
+  background: var(--charcoal);
+}
+
+/* Custom slider wrapper */
+.wrapper-custom-slider {
+  max-width: 1100px;
+  width: 80%;
+  position: relative;
+}
+
+/* Reset styles for the unordered list inside the slider */
+.wrapper-custom-slider ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation icon styles */
+.wrapper-custom-slider .icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* Positioning for navigation icons */
+.wrapper-custom-slider .icon-button:first-child {
+  left: -68px;
+}
+.wrapper-custom-slider .icon-button:last-child {
+  right: -56px;
+}
+
+/* Unique carousel styles */
+.wrapper-custom-slider .unique-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 4) - 15px);
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: 0;
+}
+
+/* Hide scrollbar for WebKit browsers */
+.unique-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card styles within the carousel */
+.unique-carousel .cards-carousel {
+  position: relative;
+  scroll-snap-align: start;
+  list-style-type: none;
+  background: #000;
+  border-radius: 8px;
+  height: 342px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  transition: z-index 0.3s ease;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Styles for dragging effect */
+.unique-carousel.dragging .cards-carousel {
+  cursor: grab;
+  user-select: none;
+}
+.unique-carousel.no-transition {
+  scroll-behavior: auto;
+}
+.unique-carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.cards-carousel .img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.card-carouselItem {
+  width: 100%;
+  position: absolute;
+  bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+/* Image styles within the cards */
+.cards-carousel .img img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  transition: 0.6s;
+}
+
+/* Link styles */
+.cards-carousel .links a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.cards-carousel .links a:visited {
+  color: #000;
+}
+
+/* Styles for the link container */
+.cards-carousel .links {
+  position: relative;
+  display: block;
+  background: #d4af50;
+  overflow: hidden;
+  transition: 1s all ease;
+  margin-top: 1rem;
+}
+
+/* Button styles */
+.cards-carousel .btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.9rem 1.2rem;
+  border-radius: 15px 50px 30px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s ease;
+  z-index: 2;
+}
+
+/* Heading and link container styles */
+.unique-carousel .cards-carousel h2,
+.unique-carousel .cards-carousel .links {
+  position: relative;
+  z-index: 2;
+}
+
+/* Card heading styles */
+.cards-carousel h2 {
+  font-size: 1.3rem;
+  font-family: var(--font-montserrat);
+  text-transform: uppercase;
+  color: var(--white);
+  text-shadow: 0px 0px 5px rgba(26, 0, 0, 1);
+  margin-bottom: -10px;
+}
+
+/* Button link styles */
+.cards-carousel .btn a {
+  position: relative;
+  z-index: 2;
+  color: inherit;
+}
+.cards-carousel .btn a:hover {
+  color: #fff !important;
+}
+
+/* Button background effect on hover */
+.cards-carousel .btn:before {
+  background-color: #161443;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+  z-index: 1;
+}
+.cards-carousel .btn:hover {
+  background-color: #161443;
+}
+.cards-carousel .btn:before {
+  width: 100%;
+  height: 0;
+}
+.cards-carousel .btn:hover::before {
+  height: 100%;
+}
+.cards-carousel .btn:hover a {
+  color: #fff !important;
+  z-index: 3;
+}
+
+.overlay {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(transparent, #d4af50 60%);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 14px;
+  transition: height 0.5s;
+  z-index: 500;
+}
+
+.overlay h2 {
+  width: 100%;
+  padding: 5px 0;
+  background: var(--charcoal);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 10px;
+  border-radius: 50px;
+}
+.overlay p {
+  font-size: 0.7rem;
+  color: var(--white);
+  background: linear-gradient(#f4980d94 60%, transparent);
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+.img:hover img {
+  transform: scale(1.2);
+}
+
+.img:hover .overlay {
+  height: 100%;
+}
+
+.noTransition {
+  transition: none !important; /* Disables any transitions */
+}
+
+.team-text {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .wrapper-custom-slider .unique-carousel {
+    grid-auto-columns: calc((100% / 3) - 12px);
+  }
+  .wrapper-custom-slider {
+    width: 75%;
+    position: relative;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 990px) {
+  .cards-carousel h2 {
+    font-size: 1rem;
+  }
+  .wrapper-custom-slider .icon-button:first-child {
+    left: -58px;
+  }
+
+  .vertical-text {
+    display: none;
+  }
+
+  .team-text {
+    color: var(--white);
+    display: block;
+    position: absolute;
+    top: 1rem;
+    padding-bottom: 10px;
+  }
+
+  .team-text p {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+
+  .wrapper-custom-slider {
+    margin-top: 6rem;
+    margin-bottom: 35px;
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper-custom-slider .unique-carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .wrapper-custom-slider .unique-carousel {
+    grid-auto-columns: 100%;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 990px) {
+  .wrapper-custom-slider .unique-carousel {
+    grid-auto-columns: calc((100% / 3) - 12px);
+  }
+  .cards-carousel h2 {
+    font-size: 1rem;
+  }
+
+  .cards-carousel .btn a {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper-custom-slider .unique-carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header-text .header-img {
+    width: 350px;
+  }
+  .wrapper-custom-slider .unique-carousel {
+    grid-auto-columns: 100%;
+  }
+  .vertical-text span {
+    font-family: var(--font-raleway);
+    display: block;
+    transform: rotate(270deg);
+    font-size: 4rem;
+    font-weight: 900;
+  }
+}

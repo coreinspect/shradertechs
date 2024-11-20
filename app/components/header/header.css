@@ -1,0 +1,314 @@
+/* *** Custom CSS For Header *** */
+
+.header {
+  position: relative;
+  background: var(--matte-black);
+  height: auto;
+}
+
+.hero-background {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* *** Design of Background *** */
+.hero-background .circle {
+  position: absolute;
+  top: 5rem;
+  right: -20rem;
+  transform: rotate(-30deg);
+}
+
+.hero-background .circle3d {
+  position: absolute;
+  bottom: 0;
+  left: 5rem;
+  animation: jumpAndRotate 3s infinite ease-in-out;
+  z-index: 1;
+}
+
+.hero-background .digital-images {
+  position: absolute;
+  bottom: 10rem;
+  left: 18rem;
+}
+
+/* ***Design of Header Content *** */
+
+.header-content {
+  position: relative;
+  z-index: 10;
+}
+.elevate-text {
+  padding-left: 3rem;
+}
+
+.elevate-text h2 {
+  font-weight: 800;
+  color: var(--white);
+  font-size: 2rem;
+  background: linear-gradient(to right, var(--white) 50%, #ff5858 50%, #cc2e5d);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.5s ease-out;
+}
+
+.elevate-text h2:hover {
+  background-position: -100%;
+}
+
+.elevate-description {
+  display: block;
+  height: 30%;
+}
+
+.elevate-videos {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(400px, 1fr)
+  ); /* Equal columns for video and text */
+  grid-auto-flow: row;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.videos {
+  position: relative;
+  width: 70%; /* Use full width available in its grid cell */
+  padding-top: 40%; /* Maintain 16:9 aspect ratio */
+}
+
+.videos iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Optional, already set inline */
+}
+
+.elevate-description p {
+  width: 100%;
+  font-size: 1.3rem;
+  color: var(--white);
+}
+
+.elevate-description p span {
+  color: var(--light-blue);
+  border-bottom: 3px solid var(--yellow);
+}
+
+.elevate-text h2 span {
+  border-bottom: 3px solid var(--yellow);
+}
+
+.header-links {
+  position: relative;
+  width: 30%;
+  display: flex;
+  justify-self: end;
+  right: 20%;
+  justify-content: space-between;
+}
+
+.social-header-links {
+  display: flex;
+  gap: 10px;
+  color: var(--white);
+}
+
+.learn-header-links {
+  display: flex;
+  background: var(--yellow);
+  font-weight: 600;
+  border-radius: 10px;
+  color: var(--white);
+  display: flex;
+  transition: background 0.5s;
+}
+
+.learn-header-links:hover {
+  background: var(--light-blue);
+}
+
+.learn-header-links .faplay-icons {
+  color: var(--matte-black);
+  transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+.learn-header-links:hover .faplay-icons {
+  animation: move-smooth 0.6s ease-in-out forwards; /* Increased duration for smoothness */
+}
+
+.mouse-icon {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5.5%;
+  padding-bottom: 5px;
+  animation-delay: 0.2s;
+  animation: mouseIcon 3s infinite ease-in-out;
+  color: var(--charcoal);
+}
+@keyframes move-smooth {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes jumpAndRotate {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-30px);
+  }
+}
+@keyframes mouseIcon {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header {
+    max-height: 100vh;
+  }
+  .elevate-text h2 {
+    font-size: 3.5rem;
+  }
+
+  .elevate-description {
+    margin-top: 5rem;
+  }
+
+  .elevate-description p {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .elevate-text h2 {
+    font-size: 3rem;
+  }
+
+  .hero-background .digital-images {
+    width: 500px;
+    height: auto;
+    left: 5rem;
+  }
+
+  .hero-background .circle3d {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .header-content {
+    padding-top: 10px !important;
+    padding-bottom: 15px !important;
+  }
+  .elevate-text {
+    padding-left: 0;
+  }
+  .elevate-text h2 {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .videos {
+    position: relative;
+    width: 50%; /* Use full width available in its grid cell */
+    padding-top: 28%; /* Maintain 16:9 aspect ratio */
+  }
+
+  .header-links {
+    margin: 0 auto;
+    width: 80%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .elevate-description p {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .hero-background .circle {
+    width: 300px;
+    right: -10rem;
+  }
+
+  .hero-background .circle {
+    width: 200px;
+  }
+
+  .elevate-description p {
+    padding: 0 40px !important;
+  }
+  .hero-background .circle3d {
+    width: 150px;
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .elevate-text h2 {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+  .elevate-description p {
+    padding: 0 40px !important;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .generative-ai p {
+    font-size: 2rem;
+  }
+
+  .header-content {
+    padding-bottom: 2rem !important;
+  }
+
+  .videos {
+    position: relative;
+    width: 90%; /* Use full width available in its grid cell */
+    padding-top: 50%; /* Maintain 16:9 aspect ratio */
+  }
+}
