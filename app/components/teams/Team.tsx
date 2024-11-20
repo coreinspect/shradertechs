@@ -17,7 +17,6 @@ export default function Team() {
   const [currentScrollLeft, setCurrentScrollLeft] = useState(0);
 
   const handleMouseEnter = () => setIsHovering(true);
-  const handleMouseLeave = () => setIsHovering(false);
 
   const autoScroll = () => {
     const carousel = carouselRef.current;
